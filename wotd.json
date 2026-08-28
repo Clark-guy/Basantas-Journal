@@ -1,0 +1,512 @@
+[
+ {
+  "english": "uphill",
+  "nepali": "ukālō",
+  "devanagari": "उकालो"
+ },
+ {
+  "english": "downhill",
+  "nepali": "ōrālō",
+  "devanagari": "ओरालो"
+ },
+ {
+  "english": "open",
+  "nepali": "khulā",
+  "devanagari": "खुला"
+ },
+ {
+  "english": "closed",
+  "nepali": "banda",
+  "devanagari": "बन्द"
+ },
+ {
+  "english": "inside",
+  "nepali": "bhitra",
+  "devanagari": "भित्र"
+ },
+ {
+  "english": "outside",
+  "nepali": "bāhira",
+  "devanagari": "बाहिर"
+ },
+ {
+  "english": "round",
+  "nepali": "gōlō",
+  "devanagari": "गोलो"
+ },
+ {
+  "english": "square",
+  "nepali": "varga",
+  "devanagari": "वर्ग"
+ },
+ {
+  "english": "circle",
+  "nepali": "gōlākāra",
+  "devanagari": "गोलाकार"
+ },
+ {
+  "english": "sharp",
+  "nepali": "tīkhō",
+  "devanagari": "तीखो"
+ },
+ {
+  "english": "locked",
+  "nepali": "lak garieko",
+  "devanagari": "लक गरिएको"
+ },
+ {
+  "english": "view",
+  "nepali": "drishya",
+  "devanagari": "दृश्य"
+ },
+ {
+  "english": "sick",
+  "nepali": "birāmi",
+  "devanagari": "बिरामी"
+ },
+ {
+  "english": "fabric",
+  "nepali": "kapadā",
+  "devanagari": "कपडा"
+ },
+ {
+  "english": "future",
+  "nepali": "bhaviShya",
+  "devanagari": "भविष्य"
+ },
+ {
+  "english": "past",
+  "nepali": "vigata",
+  "devanagari": "विगत"
+ },
+ {
+  "english": "shark",
+  "nepali": "shārka",
+  "devanagari": "शार्क"
+ },
+ {
+  "english": "cat",
+  "nepali": "birālō",
+  "devanagari": "बिरालो"
+ },
+ {
+  "english": "beautiful",
+  "nepali": "sundar",
+  "devanagari": "सुन्दर"
+ },
+ {
+  "english": "carry",
+  "nepali": "boknu",
+  "devanagari": "बोक्नु"
+ },
+ {
+  "english": "member",
+  "nepali": "sadasya",
+  "devanagari": "सदस्य"
+ },
+ {
+  "english": "strange",
+  "nepali": "anauTho",
+  "devanagari": "अनौठो"
+ }, 
+ {
+  "english": "strange",
+  "nepali": "vichitra",
+  "devanagari": "विचित्र"
+ },
+ {
+  "english": "advice",
+  "nepali": "sallaaha",
+  "devanagari": "सल्लाह"
+ },
+ {
+  "english": "aunt",
+  "nepali": "kaakee",
+  "devanagari": "काकी"
+ },
+ {
+  "english": "bad habit",
+  "nepali": "narāmro baanee",
+  "devanagari": "नराम्रो बानी"
+ },
+ {
+  "english": "bag",
+  "nepali": "jholaa",
+  "devanagari": "झोला"
+ },
+ {
+  "english": "pouch / coin purse",
+  "nepali": "thaili",
+  "devanagari": "थैली"
+ },
+ {
+  "english": "bee",
+  "nepali": "mauree",
+  "devanagari": "मौरी"
+ },
+ {
+  "english": "blanket",
+  "nepali": "kambala",
+  "devanagari": "कम्बल"
+ },
+ {
+  "english": "blood",
+  "nepali": "ragata",
+  "devanagari": "रगत"
+ },
+ {
+  "english": "boat",
+  "nepali": "naau",
+  "devanagari": "नाउ"
+ },
+ {
+  "english": "boat",
+  "nepali": "Dunggaa",
+  "devanagari": "डुङ्गा"
+ },
+ {
+  "english": "Body",
+  "nepali": "Shareer",
+  "devanagari": "शरीर"
+ },
+ {
+  "english": "book",
+  "nepali": "kitaab",
+  "devanagari": "किताब"
+ },
+ {
+  "english": "branch",
+  "nepali": "Haangaa",
+  "devanagari": "हाँगा"
+ },
+ {
+  "english": "bridge",
+  "nepali": "pul",
+  "devanagari": "पुल"
+ },
+ {
+  "english": "broom",
+  "nepali": "jhaaDu",
+  "devanagari": "झाडू"
+ },
+ {
+  "english": "bud",
+  "nepali": "kopilaa",
+  "devanagari": "कोपिला"
+ },
+ {
+  "english": "busy",
+  "nepali": "vyasta",
+  "devanagari": "व्यस्त"
+ },
+ {
+  "english": "Butterfly",
+  "nepali": "putalee",
+  "devanagari": "पुतली"
+ },
+ {
+  "english": "clock",
+  "nepali": "ghaDee",
+  "devanagari": "घडी"
+ },
+ {
+  "english": "control",
+  "nepali": "niyantraN",
+  "devanagari": "नियन्त्रण"
+ },
+ {
+  "english": "corn",
+  "nepali": "makai",
+  "devanagari": "मकै"
+ },
+ {
+  "english": "cowshed",
+  "nepali": "goTha",
+  "devanagari": "गोठ"
+ },
+ {
+  "english": "crow",
+  "nepali": "kaag",
+  "devanagari": "काग"
+ },
+ {
+  "english": "deer",
+  "nepali": "hariN",
+  "devanagari": "हरिण"
+ },
+ {
+  "english": "drum",
+  "nepali": "maadal",
+  "devanagari": "मादल"
+ },
+ {
+  "english": "dictionary",
+  "nepali": "shabdakosh",
+  "devanagari": "शब्दकोश"
+ },
+ {
+  "english": "farmer",
+  "nepali": "kisaan",
+  "devanagari": "किसान"
+ },
+ {
+  "english": "festival",
+  "nepali": "jaatraa",
+  "devanagari": "जात्रा"
+ },
+ {
+  "english": "firewood",
+  "nepali": "daauraa",
+  "devanagari": "दाउरा"
+ },
+ {
+  "english": "flower pot",
+  "nepali": "gamalaa",
+  "devanagari": "फूलको भाँडो"
+ },
+ {
+  "english": "fresh",
+  "nepali": "tajar",
+  "devanagari": "ताजा"
+ },
+ {
+  "english": "gathering",
+  "nepali": "jamaghaT",
+  "devanagari": "जमघट"
+ },
+ {
+  "english": "gift",
+  "nepali": "upahar",
+  "devanagari": "उपहार"
+ },
+ {
+  "english": "hard work",
+  "nepali": "mehanat",
+  "devanagari": "मेहनत"
+ },
+ {
+  "english": "holiday",
+  "nepali": "chuTTi",
+  "devanagari": "छुट्टी"
+ },
+ {
+  "english": "hornet/wasp",
+  "nepali": "aringaal",
+  "devanagari": "अरिङ्गाल"
+ },
+ {
+  "english": "idea",
+  "nepali": "vichaar",
+  "devanagari": "विचार"
+ },
+ {
+  "english": "insect",
+  "nepali": "kiraa",
+  "devanagari": "कीरा"
+ },
+ {
+  "english": "lake",
+  "nepali": "Taal",
+  "devanagari": "ताल"
+ },
+ {
+  "english": "landslide",
+  "nepali": "pahiro",
+  "devanagari": "पहिरो"
+ },
+ {
+  "english": "Leaf bowl",
+  "nepali": "Taparee",
+  "devanagari": "टपरी"
+ },
+ {
+  "english": "layer",
+  "nepali": "taha",
+  "devanagari": "तह"
+ },
+ {
+  "english": "leaf",
+  "nepali": "paata",
+  "devanagari": "पात"
+ },
+ {
+  "english": "lion",
+  "nepali": "Sinha",
+  "devanagari": "सिंह"
+ },
+ {
+  "english": "Loud",
+  "nepali": "Thulo svaramaa",
+  "devanagari": "ठूलो स्वरमा"
+ },
+ {
+  "english": "medicine",
+  "nepali": "dabaai",
+  "devanagari": "दबाइ"
+ },
+ {
+  "english": "medicine",
+  "nepali": "ausadhi",
+  "devanagari": "औषधी"
+ },
+ {
+  "english": "neighbor",
+  "nepali": "chimekee",
+  "devanagari": "छिमेकी"
+ },
+ {
+  "english": "news",
+  "nepali": "samaachaaar",
+  "devanagari": "समाचार"
+ },
+ {
+  "english": "news",
+  "nepali": "khabaar",
+  "devanagari": "समाचार"
+ },
+ {
+  "english": "puffed rice",
+  "nepali": "bhujaa",
+  "devanagari": "भुजा"
+ },
+ {
+  "english": "plan",
+  "nepali": "yojana",
+  "devanagari": "योजना"
+ },
+ {
+  "english": "Radish",
+  "nepali": "moolaa",
+  "devanagari": "मूला"
+ },
+ {
+  "english": "rice (seed)",
+  "nepali": "dhan",
+  "devanagari": "धान"
+ },
+ {
+  "english": "rice (uncooked)",
+  "nepali": "chaamal",
+  "devanagari": "चामल"
+ },
+ {
+  "english": "rice (cooked)",
+  "nepali": "bhat",
+  "devanagari": "भात"
+ },
+ {
+  "english": "beaten rice",
+  "nepali": "chiuraa",
+  "devanagari": "चिउरा"
+ },
+ {
+  "english": "rule",
+  "nepali": "Niyam",
+  "devanagari": "नियम"
+ },
+ {
+  "english": "school",
+  "nepali": "vidyaalaya",
+  "devanagari": "विद्यालय"
+ },
+ {
+  "english": "smell",
+  "nepali": "gandha",
+  "devanagari": "गन्ध"
+ },
+ {
+  "english": "stone",
+  "nepali": "Dhunggaa",
+  "devanagari": "ढुङ्गा"
+ },
+ {
+  "english": "rest stop",
+  "nepali": "Chautaaree",
+  "devanagari": "चौतारी"
+ },
+ {
+  "english": "stork",
+  "nepali": "saaras",
+  "devanagari": "सारस"
+ },
+ {
+  "english": "time",
+  "nepali": "paTak",
+  "devanagari": "पटक"
+ },
+ {
+  "english": "uncle",
+  "nepali": "kaakaa",
+  "devanagari": "काका"
+ },
+ {
+  "english": "well",
+  "nepali": "inaar",
+  "devanagari": "इनार"
+ },
+ {
+  "english": "peace",
+  "nepali": "shaanti",
+  "devanagari": "शान्ति"
+ },
+ {
+  "english": "fungus",
+  "nepali": "dhusee",
+  "devanagari": "धुसी"
+ },
+ {
+  "english": "mother tongue",
+  "nepali": "marto bhasa",
+  "devanagari": "मार्तो भासा"
+ },
+ {
+  "english": "learn by doing",
+  "nepali": "gardei sikdei",
+  "devanagari": "गर्दै सिक्दै"
+ },
+ {
+  "english": "hostel",
+  "nepali": "chhaatraabaas",
+  "devanagari": "छात्रावास"
+ },
+ {
+  "english": "government",
+  "nepali": "sarkaar",
+  "devanagari": "सरकार"
+ },
+ {
+  "english": "local",
+  "nepali": "sthaaniiya",
+  "devanagari": "स्थानीय"
+ },
+ {
+  "english": "on the side",
+  "nepali": "chheumaa",
+  "devanagari": "छेउमा"
+ },
+ {
+  "english": "empty",
+  "nepali": "khaalee",
+  "devanagari": "खाली"
+ },
+ {
+  "english": "to enter",
+  "nepali": "pasnu",
+  "devanagari": "पस्नु"
+ },
+ {
+  "english": "to win",
+  "nepali": "jitnu",
+  "devanagari": "जित्नु"
+ },
+ {
+  "english": "to aim at",
+  "nepali": "taaknu",
+  "devanagari": "टाकनु"
+ },
+ {
+  "english": "to want",
+  "nepali": "chaahanu",
+  "devanagari": "चाहनु"
+ }
+]
