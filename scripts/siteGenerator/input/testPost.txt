@@ -1,7 +1,0 @@
-This is my cool post
-
-I am testing how it works now. I want to make sure that if I format a ummm blog entry correctly, the site generator can pick that all up and just make it work.
-
-We will see how it goes! Thanks.
-
-What happens if I add more? Does it work or nah?
