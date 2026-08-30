@@ -94,6 +94,7 @@ body {
   height:fit-content;
 }
 
+
 .sidebar>h2{
   padding:0;
   margin: 0;
@@ -173,21 +174,20 @@ nav > ul > li:hover, nav > ul > li:visited:hover {
 }
 
 #address {
-  width: 200px;
-  border-radius: 20px;
+  max-width: 200px;
   border: solid 2px black;
   box-shadow: 5px 5px 3px darkcyan;
+  display:block;
 }
 
 p {
   /*border: solid black 1px;*/
-  border-radius: .75em 0em;
   color: #4c4c4c;
-  /*padding: .5em;*/
   line-height: 1.75em;
   background-color: antiquewhite;
   overflow:auto;
 }
+
 
 li {
   color: #4c4c4c;
@@ -197,11 +197,36 @@ li {
 article{
   border: 60px solid transparent;
   border-image: url(../images/scroll1.png) 30 stretch;
-  background-clip: content-box;
   margin-top:1em;
-  background-color: antiquewhite;
   overflow:auto;
+}
 
+article > h2{
+  padding:1em;
+}
+
+article > * {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  background-color: antiquewhite;
+  margin:0;
+}
+
+article > a {
+  display:block;
+}
+
+article > p {
+    padding: 1em;
+}
+
+article > ul > li {
+  margin:0;
+  padding-top: .5em;
+}
+
+i{
+  font-family: initial;
 }
 
 .insetImages {
@@ -211,10 +236,8 @@ article{
 
 details{
   background-color: lightblue;
-  border-radius: .5em;
   padding: .5em;
-  max-width: fit-content;
-  margin: .5em;
+  max-width: 100%;
 }
 summary{
   text-decoration: underline;
@@ -223,7 +246,8 @@ summary{
 }
 
 hr{
-  margin:10%;
+  margin:0;
+  height: 1px;
 }
 
 #scene-container{
@@ -257,7 +281,6 @@ hr{
     font-size: small;
   }
   p{
-    margin:.1em;
     padding:.25em;
   }
   .sidebar {
@@ -362,10 +385,6 @@ hr{
   article{
     max-height:500px;
     overflow:scroll;
-    border: 30px solid transparent;
-    border-image: url(../images/scroll1.png) 30 stretch;
-    background-clip: content-box;
-
   }
 
 

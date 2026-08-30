@@ -6,7 +6,7 @@ async function loadWOTD(){
             throw new Error(`WOTD failed to load`)
         }
         const data = await response.json();
-        console.log(data);
+        //console.log(data);
 
         //This code ripped from stack exchange. There was another version that
         //corrected for daylight savings time but I couldn't be bothered to 
@@ -16,10 +16,10 @@ async function loadWOTD(){
         var diff = now - start;
         var oneDay = 1000 * 60 * 60 * 24;
         var day = Math.floor(diff / oneDay);
-        console.log('Day of year: ' + day);
+        //console.log('Day of year: ' + day);
 
         var wotdIndex = day%data.length;
-        console.log(wotdIndex);
+        //console.log(wotdIndex);
         document.getElementById("WOTDNepaliRoman").innerHTML = data[wotdIndex].nepali
         document.getElementById("WOTDEnglish").innerHTML = data[wotdIndex].english
         if (data[wotdIndex].devanagari){

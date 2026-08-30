@@ -61,3 +61,5 @@ It's been a while since I've updated this readme, so I should go over it sometim
  * move your exported note folder (including md file and attachments folder) into input folder
  * run [python main 'folder name']
  * copy the new files (feed.xml, blog.html, blog entry) to neocities. Ideally, this will be handled by a github action in the future.
+
+ If I fix it so my script uploads to github automatically, and then via a github action updates neocities, I could use a scheduled task on macos to watch the input folder for a new file, and have it scoop it up every so often instead of doing it by hand. Then every time I exported to that folder, it would run the script, upload to github, github would upload to neocities, and all I would need to do is verify it made it over a few minutes later. Might be over-engineering this slightly.

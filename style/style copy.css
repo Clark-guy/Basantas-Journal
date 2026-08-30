@@ -195,13 +195,12 @@ li {
 }
 
 article{
-  border: 60px solid transparent;
-  border-image: url(../images/scroll1.png) 30 stretch;
-  background-clip: content-box;
+  border: solid black 1px;
+  border-radius: 0 .75em .75em .75em ;
+  padding: 1em;
   margin-top:1em;
   background-color: antiquewhite;
   overflow:auto;
-
 }
 
 .insetImages {
@@ -362,10 +361,6 @@ hr{
   article{
     max-height:500px;
     overflow:scroll;
-    border: 30px solid transparent;
-    border-image: url(../images/scroll1.png) 30 stretch;
-    background-clip: content-box;
-
   }
 
 
