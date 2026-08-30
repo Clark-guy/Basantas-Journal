@@ -54,3 +54,10 @@ a lot of this can come later - for now focus on functionality
 
 ##### OTHER #####
 Want to put more of those 80x31 tags on the page. those are cute
+
+##### Note to Self #####
+It's been a while since I've updated this readme, so I should go over it sometime soon. In the meantime, I want to write myself some quick notes on using the site generator
+ * navigate to the site generator, activate environment with 'source ./venv/bin/activate'
+ * move your exported note folder (including md file and attachments folder) into input folder
+ * run [python main 'folder name']
+ * copy the new files (feed.xml, blog.html, blog entry) to neocities. Ideally, this will be handled by a github action in the future.
