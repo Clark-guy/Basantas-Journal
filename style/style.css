@@ -195,13 +195,18 @@ li {
 }
 
 article{
-  border: 60px solid transparent;
+  border: 60px solid antiquewhite;
   border-image: url(../images/scroll1.png) 30 stretch;
   background-clip: content-box;
+  image-rendering: pixelated;
   margin-top:1em;
   background-color: antiquewhite;
   overflow:auto;
+}
 
+
+article > h1, article > h2 {
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .insetImages {
@@ -296,6 +301,8 @@ hr{
   #main{
     margin-top: 6em;
     padding: 0.3em;
+    height: 70vh;
+    overflow:scroll;
 
   }
   #header>a>img{
@@ -360,8 +367,7 @@ hr{
   }
 
   article{
-    max-height:500px;
-    overflow:scroll;
+    
     border: 30px solid transparent;
     border-image: url(../images/scroll1.png) 30 stretch;
     background-clip: content-box;

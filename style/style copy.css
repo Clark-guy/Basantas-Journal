@@ -195,12 +195,18 @@ li {
 }
 
 article{
-  border: solid black 1px;
-  border-radius: 0 .75em .75em .75em ;
-  padding: 1em;
+  border: 60px solid antiquewhite;
+  border-image: url(../images/scroll1.png) 30 stretch;
+  background-clip: content-box;
+  image-rendering: pixelated;
   margin-top:1em;
   background-color: antiquewhite;
   overflow:auto;
+}
+
+
+article > h1, article > h2 {
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .insetImages {
@@ -361,6 +367,10 @@ hr{
   article{
     max-height:500px;
     overflow:scroll;
+    border: 30px solid transparent;
+    border-image: url(../images/scroll1.png) 30 stretch;
+    background-clip: content-box;
+
   }
 
 
