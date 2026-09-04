@@ -215,7 +215,7 @@ article > h1, article > h2 {
 }
 
 article > p {
-  max-width: fit-content;
+  max-width: 100%;
 
 }
 
@@ -223,7 +223,7 @@ article > p > img{
   background-color: lightblue;
   border-radius: .5em;
   padding: .5em;
-  max-width: fit-content;
+  max-width: 90%;
   margin: .5em;
 
 }

@@ -122,6 +122,11 @@ def main():
         #read in markdown, convert to html, replace in template
         with open('./input/'+postTitle+'/'+postTitle+'.md') as inputMarkDown:
             inputMarkDownString = inputMarkDown.read().replace('.heic','.jpeg')
+
+            #This is such a shitty way to fix this. I should come up with
+            #something better, but unfortunately it works as is.
+            #It just replaces the markdown stars with <i> tags since the
+            #converter seems to fail to do that itself
             openTag = True
             inputMarkDownStringFixedItalics = ''
             for char in inputMarkDownString:
@@ -140,8 +145,7 @@ def main():
 
             
             md = MarkdownIt()
-            #print(md.render(inputMarkDownString))
-            #TODO Fix RSS Feed
+            # md.enable('em') # TODO: it's possible this would fix the big ugly chunk of code up above this 
             updateRSSFeed(todaysDate, postTitle, md.render(inputMarkDownStringFixedItalics))
 
             template = open('../../pages/blog posts/'+todaysDate+'/post.html', 'r')
@@ -167,15 +171,12 @@ def main():
 
         linkBlogPage(todaysDate,postTitle)
 
-        #TODO fix RSS updated for whole thing
-
         #TODO Fix figures to be in a figure element
-
-        #TODO Shit I just thought of something..
 
         #TODO automatically push to github? Maybe not. Would be convenient but
         #then publishing would ALWAYS push to prod
-        #TODO add darkreader lock to all pages -     
+        #Something to think about though as I test this tool more. Once all
+        #the kinks are worked out, it could save some time
 
 
         
