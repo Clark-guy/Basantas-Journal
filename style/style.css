@@ -214,6 +214,20 @@ article > h1, article > h2 {
   /*to be used for all images in the future*/
 }
 
+article > p {
+  max-width: fit-content;
+
+}
+
+article > p > img{
+  background-color: lightblue;
+  border-radius: .5em;
+  padding: .5em;
+  max-width: fit-content;
+  margin: .5em;
+
+}
+
 details{
   background-color: lightblue;
   border-radius: .5em;
@@ -292,19 +306,33 @@ hr{
 }
 
 @media screen and (max-width: 600px) {
+
+  body {
+    height:100vh;
+  }
+
   .container {
+    height:100vh;
     justify-content: center;
     display:grid;
     grid-template-columns: 2% 96% 2%;
   }
 
   #main{
-    margin-top: 6em;
-    padding: 0.3em;
-    height: 70vh;
+    margin-top: 12vh;
+    padding: 0em;
+    height: 80vh;
     overflow:scroll;
 
   }
+
+  article{
+    border: 30px solid transparent;
+    border-image: url(../images/scroll1.png) 30 stretch;
+    background-clip: content-box;
+
+  }
+
   #header>a>img{
     width:80%;
   }
@@ -366,13 +394,6 @@ hr{
     margin:0;
   }
 
-  article{
-    
-    border: 30px solid transparent;
-    border-image: url(../images/scroll1.png) 30 stretch;
-    background-clip: content-box;
-
-  }
 
 
 }
