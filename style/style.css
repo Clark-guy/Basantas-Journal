@@ -216,7 +216,7 @@ article > h1, article > h2 {
 
 article > p {
   max-width: 100%;
-
+  overflow:clip;
 }
 
 article > p > img{
