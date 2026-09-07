@@ -1,5 +1,10 @@
 {
+  
   "dependencies": {
     "google-translate-api-x": "^10.7.3"
-  }
+  },
+  "type": "module"
+  
+  
 }
+

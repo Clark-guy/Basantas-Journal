@@ -108,7 +108,7 @@
   "english": "strange",
   "nepali": "anauTho",
   "devanagari": "अनौठो"
- }, 
+ },
  {
   "english": "strange",
   "nepali": "vichitra",
@@ -508,5 +508,55 @@
   "english": "to want",
   "nepali": "chaahanu",
   "devanagari": "चाहनु"
+ },
+ {
+  "english": "ink",
+  "nepali": "masee",
+  "devanagari": "मसी"
+ },
+ {
+  "english": "wait",
+  "nepali": "parkhanu",
+  "devanagari": "पर्खनु"
+ },
+ {
+  "english": "wait",
+  "nepali": "kurnu",
+  "devanagari": "कुर्नु"
+ },
+ {
+  "english": "to fix",
+  "nepali": "Thik garnu",
+  "devanagari": "ठीक गर्न"
+ },
+ {
+  "english": "something",
+  "nepali": "kehi",
+  "devanagari": "केहि"
+ },
+ {
+  "english": "someone",
+  "nepali": "kohee",
+  "devanagari": "कोही"
+ },
+ {
+  "english": "story",
+  "nepali": "kathaa",
+  "devanagari": "कथा"
+ },
+ {
+  "english": "example",
+  "nepali": "udaaharaN",
+  "devanagari": "उदाहरण"
+ },
+ {
+  "english": "tongue",
+  "nepali": "jibro",
+  "devanagari": "जिब्रो"
+ },
+ {
+  "english": "to work",
+  "nepali": "kaam garnu",
+  "devanagari": "काम गर्न"
  }
 ]

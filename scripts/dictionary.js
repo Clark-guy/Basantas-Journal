@@ -12,20 +12,21 @@ async function loadWOTD(filepath){
         const rawData = await readFile(filepath, 'utf8');
         const data = JSON.parse(rawData);
         for (const word of data){
-            try {
-                const res = await translate(word.english, { to: 'ne' });
-                /*console.log(word.english);
-                console.log(res.text);
-                console.log(res.raw[0]);*/
-                word.devanagari = res.text;
-                //TODO find out how to grab the latin character form of the word for pronunciation
+            if (!word.devanagari) {
+                try {
+                    const res = await translate(word.english, { to: 'ne' });
+                    /*console.log(word.english);
+                    console.log(res.text);
+                    console.log(res.raw[0]);*/
+                    word.devanagari = res.text;
+                    //TODO find out how to grab the latin character form of the word for pronunciation
+                }
+                catch (error){
+                    throw new Error(`failed to translate word ${error}`)
+                }
+                console.log(word.english);
             }
-            catch (error){
-                throw new Error(`failed to translate word ${error}`)
-            }
-            console.log(word.english);
         }
-        console.log(data);
         const outputString = JSON.stringify(data, null, ' ')
         await writeFile(filepath, outputString, 'utf8');
 
@@ -46,3 +47,6 @@ randomization or even toying with hashing
 functions to pick the word, so it's not entirely
 alphabetical (or even mostly, as it is now)
 */
+
+/*
+I forget how to run this. Just node dictionary.js maybe? Make a backup. */
