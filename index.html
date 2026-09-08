@@ -20,7 +20,8 @@
             <article>
             <h1>Welcome!</h1>
             <p><i>"If you want to get there, I would not start from here" </i></p>
-        <hr>
+        <fieldset id="siteUpdates">
+          <legend><h2>Site Updates</h2></legend>
         <h2>Wednesday, September 2nd: Flooding, RSS, Accesibility, Word of the Day</h2>
         <p>Hello everyone!</p>
         <p>As you probably know at this point, there have been many severe
@@ -103,15 +104,30 @@
           a great day. </p><p>
           - Basanta
         </p>
+      </fieldset>
         <hr>
         <h2>"What's all this then?"</h2>
         <p>Welcome! My name is James, and this is my new website. I will be 
           using this space to detail my experience in Nepal, as well as 
-          play around with web development and express random sundry thoughts.          
+          play around with web development and express sundry thoughts.          
           </p><p>
           Feel free to peruse the site, it is currently a work in progress.
           If anything looks wrong or is blatantly broken, please feel free to
         let me know!</p>
+        <hr>
+        <fieldset>
+          <legend><h2>Stay Updated</h2></legend>
+          <p>Submit your email to get updates when I make a new post!</p>
+        <form action="./scripts/form.js" method="post">
+          <label>Email:</label>
+          <input type="email" name="email" placeholder="name@example.com">
+          <br><br>
+          <button type="submit">Submit</button>
+        </form>
+        <br>
+        </fieldset>
+        <br>
+
           </article>
       </div>
       <div id="footer"></div>

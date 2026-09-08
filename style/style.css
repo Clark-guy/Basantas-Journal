@@ -2,6 +2,11 @@
 
 
 
+fieldset{
+  max-height: 60vh;
+  overflow: scroll;
+  border: solid burlywood;
+}
 
 .hamburger{
   display:none;
@@ -205,7 +210,7 @@ article{
 }
 
 
-article > h1, article > h2 {
+article > h1, article > h2, legend, fieldset > h2 {
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -306,6 +311,9 @@ hr{
 }
 
 @media screen and (max-width: 600px) {
+  fieldset{
+    max-height: 40vh;
+  }
 
   body {
     height:100vh;
