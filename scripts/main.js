@@ -1,27 +1,22 @@
 //Imports
 import * as THREE from 'three';
+import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
 import { Reflector } from 'three/addons/objects/Reflector.js';
 
-//Boilerplate
+/* * * * BOILERPLATE * * * */ 
+//Scene, background, camera, renderer
 const scene = new THREE.Scene();
 const container = document.getElementById("scene-container");
-
 scene.background = new THREE.Color(0x00799D);
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
-renderer.setAnimationLoop( animate );
-
 renderer.setSize(
     container.clientWidth,
     container.clientHeight
 );
-
 container.appendChild( renderer.domElement );
-
 //lighting
-
 const intensity = 1;
 const color = 0xFFFFFF;
 const light1 = new THREE.DirectionalLight(color, intensity);
@@ -29,7 +24,16 @@ light1.position.set(10, 10, 0);
 light1.target.position.set(2, 0, 0);
 scene.add(light1);
 scene.add(light1.target);
+/* * * * END BOILERPLATE * * * */ 
 
+
+
+const fbxloader = new FBXLoader();
+const fishy = await fbxloader.loadAsync( '../models/fish.fbx' );
+fishy.scale.setScalar(0.01);
+fishy.position.set(-5,5,0);
+scene.add( fishy );
+renderer.setAnimationLoop( animate );
 
 
 //Plane / tank
@@ -93,7 +97,7 @@ const fish = new THREE.Mesh( fishGeo, fishMat );
 
 const fishPos = fish.geometry.getAttribute("position");
 console.log(fishPos.array);
-fishPos.array[0] = fishPos.array[0]+0.2;
+//fishPos.array[0] = fishPos.array[0]+0.2;
 
 
 scene.add( fish );
@@ -206,9 +210,9 @@ scene.add( refreflector );
 function animate( time ) {
     light1.position.x = Math.sin(time / 100)/2;
     light1.intensity = 1+Math.sin(time / 500)/2;
-    //octahedron.rotation.x = time / 1000;
+    fishy.rotation.y = time / 1000;
     //octahedron.rotation.y = time / 1000;
-    fish.position.y = 2+Math.sin(time / 1000)/2;
+    fish.rotation.y = 2+Math.sin(time / 1000)/2;
 
     camera.rotation.y = Math.sin(time / 500)/200;
     camera.position.y = camera.position.y+Math.sin(time / 500)/100;

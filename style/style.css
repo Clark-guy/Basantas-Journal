@@ -53,6 +53,12 @@ body {
 #header>a>img{
   animation: float 8s;
   animation-iteration-count: infinite;
+  scale:1;
+  transition: .3s;
+  user-select: none;
+}
+#header>a>:hover{
+  scale:1.1;
 }
 
 #main {
@@ -87,6 +93,10 @@ body {
   grid-row: 2;
   height:fit-content;
   display: inline-block;
+}
+
+.sidebar > h2, .sidebar > nav > * {
+  user-select: none;
 }
 
 #wotd{
@@ -224,6 +234,11 @@ article > p {
   overflow:clip;
 }
 
+article > img{
+  max-width:98.5%;
+  border: solid burlywood;
+}
+
 article > p > img{
   background-color: lightblue;
   border-radius: .5em;
@@ -268,17 +283,17 @@ hr{
   .container {
     justify-content: center;
     display:grid;
-    grid-template-columns: 20% 60%;
+    grid-template-columns: 20% 65%;
   }
   body{
     margin:0em;
     background-image: url("/images/BackgroundScaledMobile.png");
   }
   h1{
-    font-size: medium;
+    font-size: large;
   }
   h2{
-    font-size: small;
+    font-size: medium;
   }
   p{
     margin:.1em;
@@ -306,6 +321,15 @@ hr{
   }
   #main{
     border:  ridge .5em brown;
+    padding-left:.25em;
+    padding-right:.25em;
+  }
+
+  article{
+    border: 45px solid transparent;
+    border-image: url(../images/scroll1.png) 30 stretch;
+    background-clip: content-box;
+
   }
 
 }

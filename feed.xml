@@ -2,25 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Basanta's Journal</title>
   <link href="https://clarknado.neocities.org/" />
-  <updated>2026-09-04T15:44:54.498838+00:00</updated>
+  <updated>2026-09-10T02:03:55.694664+00:00</updated>
   <author>
     <name>Basanta Gurung</name>
   </author>
   <id>https://clarknado.neocities.org/</id>
-  <entry>
-    <title>Don't worry, I'm still alive!</title>
-    <link href="https://clarknado.neocities.org/pages/blog%20posts/08-25-26/post" />
-    <id>https://clarknado.neocities.org/pages/blog%20posts/08-25-26/post</id>
-    <updated>2026-08-25T00:00:00+00:00</updated>
-    <summary>Some life updates, a soccer game detailed.</summary>
-  </entry>
-  <entry>
-    <title>Flooding in Nepal</title>
-    <link href="https://clarknado.neocities.org/pages/blog%20posts/08-28-26/post" />
-    <id>https://clarknado.neocities.org/pages/blog%20posts/08-28-26/post</id>
-    <updated>2026-08-28T00:00:00+00:00</updated>
-    <summary>A recent tragedy in Nepal.</summary>
-  </entry>
   <entry>
     <title>Shaving, Skating</title>
     <link href="https://clarknado.neocities.org/pages/blog%20posts/09-04-26/post" />
@@ -44,5 +30,19 @@
 &lt;li&gt;Basanta&lt;/li&gt;
 &lt;/ul&gt;
 </summary>
+  </entry>
+  <entry>
+    <title>Flooding in Nepal</title>
+    <link href="https://clarknado.neocities.org/pages/blog%20posts/08-28-26/post" />
+    <id>https://clarknado.neocities.org/pages/blog%20posts/08-28-26/post</id>
+    <updated>2026-08-28T00:00:00+00:00</updated>
+    <summary>A recent tragedy in Nepal.</summary>
+  </entry>
+  <entry>
+    <title>Don't worry, I'm still alive!</title>
+    <link href="https://clarknado.neocities.org/pages/blog%20posts/08-25-26/post" />
+    <id>https://clarknado.neocities.org/pages/blog%20posts/08-25-26/post</id>
+    <updated>2026-08-25T00:00:00+00:00</updated>
+    <summary>Some life updates, a soccer game detailed.</summary>
   </entry>
 </feed>

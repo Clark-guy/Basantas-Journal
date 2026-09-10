@@ -48,11 +48,12 @@ def updateRSSFeed(todaysDate,title,summary):
 
 
 
-    newEntryTag = ET.SubElement(et.getroot(), 'entry')
+    newEntryTag = ET.Element('entry')
     titleTag = ET.SubElement(newEntryTag, 'title')
     linkTag = ET.SubElement(newEntryTag, 'link')
     idTag = ET.SubElement(newEntryTag, 'id')
     updatedTag = ET.SubElement(newEntryTag, 'updated')
+    publishedTag = ET.SubElement(newEntryTag, 'published')
     summaryTag = ET.SubElement(newEntryTag, 'summary')
 
 
@@ -60,9 +61,12 @@ def updateRSSFeed(todaysDate,title,summary):
     linkTag.attrib['href'] = 'https://clarknado.neocities.org/pages/blog%20posts/'+todaysDate+'/post'
     idTag.text = 'https://clarknado.neocities.org/pages/blog%20posts/'+todaysDate+'/post'
     updatedTag.text = str(dateTimeNow)
+    publishedTag.text = str(dateTimeNow)
     summaryTag.text = summary
     summaryTag.attrib['type'] = 'html'
 
+    #index 5 - insert at top
+    root.insert(5, newEntryTag)
     ET.indent(et.getroot(), space="  ")
     et.write('../../feed.xml', encoding='utf-8', xml_declaration=True)
 
