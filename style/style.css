@@ -341,10 +341,12 @@ hr{
 
   body {
     height:100vh;
+    height:100dvh;
   }
 
   .container {
     height:100vh;
+    height:100dvh;
     justify-content: center;
     display:grid;
     grid-template-columns: 2% 96% 2%;
@@ -369,13 +371,17 @@ hr{
     width:80%;
   }
   #nav{
-    display: none;
-    position:fixed;
-    top:80px;
+    display: block;
   }
 
   #wotd{
-    display: none;
+    display:block;
+  }
+
+  #sidebar {
+    display:none;
+    position:fixed;
+    top:80px;
   }
 
   .sidebar {
@@ -416,10 +422,10 @@ hr{
 
   #header {
     height:15%;
-  position:fixed;
-  grid-column: 2 / span 2;
-  grid-row: 1;
-  padding:0em;
+    position:fixed;
+    grid-column: 2 / span 2;
+    grid-row: 1;
+    padding:0em;
   }
 
   figure{

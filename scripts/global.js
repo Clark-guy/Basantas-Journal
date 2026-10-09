@@ -64,7 +64,7 @@ fetch("/components/footer.html")
 
 
 function navHide() {
-    var nav = document.getElementById("nav");
+    var nav = document.getElementById("sidebar");
     if (nav.style.display === "inline-block" ){
         nav.style.display = "none";
     }
@@ -73,6 +73,7 @@ function navHide() {
     }
 }
 
+//does this need to be in global? Should I break this into another script?
 function subscribeNewsletter(){
     const email = encodeURIComponent(document.getElementById('newsletter-email').value)
     const url = 'https://simple-newsletter.com/v1/subscriptions/?uri=https%3A%2F%2Fclarknado.neocities.org%2Ffeed.xml&return=https%3A%2F%2Fclarknado.neocities.org%2F&email='+email;

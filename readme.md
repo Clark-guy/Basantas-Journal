@@ -1,29 +1,31 @@
-#Basanta's Journal
+# Basanta's Journal
 
 This is the code for my blog, hosted on neocities.org. You can find my site at
 https://www.clarknado.neocities.org/. The name is a play on Sharknado with my
 Middle name, Clark.
 
-TODO:
+### TODO:
  * Make a dark mode stylesheet
  * revamp home page - compress site updates section, have a link to most recent blog post
  * consider GitHub actions to update neocities
+ * A separate page for learning Nepali, somewhat like Jones quiz? Maybe even just link to jones quiz on my site. Would be a nice way to further utilize the dictionary I'm throwing together
+   * Either way add more to Nepali dictionary from my textbooks, my notes, etc
 
 
 
-##### CODING PRACTICES #####
+### CODING PRACTICES #####
 * For text documents that will not be put on the site, 80 character limit (like
 this readme for example)
 
-##### STYLE #####
+### STYLE #####
 I think that it makes the most sense to have the backgrounds be scenery from nepal
 Other motifs - yarn borders, paper backgrounds?
 a lot of this can come later - for now focus on functionality
 
-##### OTHER #####
+### OTHER #####
 Want to put more of those 80x31 tags on the page. those are cute
 
-##### Static Site Generation #####
+### Static Site Generation #####
 It's been a while since I've updated this readme, so I should go over it sometime soon. In the meantime, I want to write myself some quick notes on using the site generator
  * navigate to the site generator, activate environment with 'source ./venv/bin/activate'
  * move your exported note folder (including md file and attachments folder) into input folder

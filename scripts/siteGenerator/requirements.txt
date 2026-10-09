@@ -1,0 +1,7 @@
+beautifulsoup4==4.15.0
+markdown-it-py==4.2.0
+mdurl==0.1.2
+pillow==12.3.0
+pillow_heif==1.8.0
+soupsieve==2.10
+typing_extensions==4.16.0

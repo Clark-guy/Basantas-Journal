@@ -13,24 +13,24 @@ from pathlib import Path
 #for starters just going to have it piped in, but ultimately could use tkinter
 #for a user interface
 
-#currently to run this (subject to change):
-#cat testPost.txt | python main.py 'title'
-#post will be dumped into output folder
+#to use this script in the future:
 
 '''
-I have some issues with having a title in front. Maybe I should make it take two args
-first arg is title, then post. I can add more args for more shit if necessary
-Eventually I could replace this with a dict when i made a gui - then not all fields
-would be totally mandatory. But for now, 2 args title / post will suffice
-'''
+1. Export the apple notes file into the 'input' folder in siteGenerator. It 
+should create a folder with the name you specify, and a .md file with the same
+name
 
-'''
+2. run 'source .venv/bin/activate' from siteGenerator to activate the 
+virtual environment
+
+3. run 'python ./main.py "foldername"' to generate the new entry.
+
+4. manually move files to neocities. That means copy the new post, feed.xml,
+blog.html. I think that's everything for now
+
 TODO:
-1. Images show up unscaled, and heic dont work at all. Need to convert to
-medium sized jpeg
-2. Probably best to fix the whole figure element thing. Italicized text 
-doesn't seem to show up correctly. Just replace all <img> elements with
-<details><figure><img></img></figure></details>
+1. would be a good idea to fix the figure elements so images can be minimized
+for easier reading.
 '''
 
 
@@ -108,7 +108,7 @@ def processImages(filename):
     wpercent = (baseWidth / float(img.size[0]))
     hsize = int((float(img.size[1]) * float(wpercent)))
     img = img.resize((baseWidth, hsize), Image.Resampling.LANCZOS)
-    img.save(filename)
+    img.save(filename.replace('.heic', '.jpeg'))
 
 
 
