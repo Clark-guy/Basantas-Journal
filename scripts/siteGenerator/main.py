@@ -23,7 +23,10 @@ name
 2. run 'source .venv/bin/activate' from siteGenerator to activate the 
 virtual environment
 
-3. run 'python ./main.py "foldername"' to generate the new entry.
+3. run 'python ./main.py "foldername"' to generate the new entry. Don't specify
+the path to the folder, just its name. E.g. 'python ./main "IST"'
+
+3.5 - for a dry run (no rss update, no linking to the /posts folder) add -d
 
 4. manually move files to neocities. That means copy the new post, feed.xml,
 blog.html. I think that's everything for now
@@ -31,6 +34,8 @@ blog.html. I think that's everything for now
 TODO:
 1. would be a good idea to fix the figure elements so images can be minimized
 for easier reading.
+2. would also be a good idea to make images work with the simple newsletter -
+this is just a matter of fixing the rss feed script to supply the correct url
 '''
 
 
@@ -111,11 +116,33 @@ def processImages(filename):
     img.save(filename.replace('.heic', '.jpeg'))
 
 
+def fixMarkdownItalics(inputMarkDownString):
+    #This is such a shitty way to fix this. I should come up with
+    #something better, but unfortunately it works as is.
+    #It just replaces the markdown stars with <i> tags since the
+    #converter seems to fail to do that itself.
+
+    inputMarkDownStringFixedItalics = ''
+    openTag = True
+    for char in inputMarkDownString:
+        if char == '*':
+            print('found a star')
+            if openTag:
+                inputMarkDownStringFixedItalics += '<i>'
+                openTag = False
+            else:
+                inputMarkDownStringFixedItalics += '</i>'
+                openTag = True
+        else:
+            inputMarkDownStringFixedItalics += char
+    return inputMarkDownStringFixedItalics
 
 
 def main():
     #take post from input (given name)
-    if (len(sys.argv) == 2):
+    if (len(sys.argv) == 2 or len(sys.argv) == 3):
+        dryRun = True if (sys.argv[2] == '-d') else False
+
         postTitle = sys.argv[1]
         todaysDate = date.today().strftime('%m-%d-%y')
 
@@ -127,30 +154,12 @@ def main():
         with open('./input/'+postTitle+'/'+postTitle+'.md') as inputMarkDown:
             inputMarkDownString = inputMarkDown.read().replace('.heic','.jpeg')
 
-            #This is such a shitty way to fix this. I should come up with
-            #something better, but unfortunately it works as is.
-            #It just replaces the markdown stars with <i> tags since the
-            #converter seems to fail to do that itself
-            openTag = True
-            inputMarkDownStringFixedItalics = ''
-            for char in inputMarkDownString:
-                if char == '*':
-                    print('found a star')
-                    if openTag:
-                        inputMarkDownStringFixedItalics += '<i>'
-                        openTag = False
-                    else:
-                        inputMarkDownStringFixedItalics += '</i>'
-                        openTag = True
-                else:
-                    inputMarkDownStringFixedItalics += char
+            inputMarkDownStringFixedItalics = fixMarkdownItalics(inputMarkDownString)
 
-                    
-
-            
             md = MarkdownIt()
-            # md.enable('em') # TODO: it's possible this would fix the big ugly chunk of code up above this 
-            updateRSSFeed(todaysDate, postTitle, md.render(inputMarkDownStringFixedItalics))
+            # md.enable('emphasis') # TODO: it's possible this would fix the "fixMarkdownItalics" thing 
+            if not dryRun:
+                updateRSSFeed(todaysDate, postTitle, md.render(inputMarkDownStringFixedItalics))
 
             template = open('../../pages/blog posts/'+todaysDate+'/post.html', 'r')
             templateText = template.read()
@@ -172,8 +181,8 @@ def main():
 
         
 
-
-        linkBlogPage(todaysDate,postTitle)
+        if not dryRun:
+            linkBlogPage(todaysDate,postTitle)
 
         #TODO Fix figures to be in a figure element
 

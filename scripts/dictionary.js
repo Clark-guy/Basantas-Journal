@@ -1,25 +1,32 @@
 
-//This is a utility script to be used with node.js
+//This is a utility script to be used with node.js. When run, it will take all
+//english words in the ../wotd.json file and add on devanagari and romanized
+//nepali. The format of the json file must already be correct for this to work.
+//
+//To run this script: run "node dictionary.js" from within the scripts folder.
+//
+//TODO:make a nicer way to input english words to save myself the trouble later
+//e.g. if I could export an apple notes file and dump it in here...
 
-//I have a JSON dictionary of nepali words.
-//First thing I want to do is loop through all the words and add a blank "devanagari" key
 
 import { writeFile, readFile } from 'fs/promises';
 import { translate } from 'google-translate-api-x';
+import { Sanscript } from '@indic-transliteration/sanscript'
+
 
 async function loadWOTD(filepath){
     try {
         const rawData = await readFile(filepath, 'utf8');
         const data = JSON.parse(rawData);
         for (const word of data){
-            if (!word.devanagari) {
+            if (!word.devanagari || !word.nepali) {
                 try {
+                    //console.log(word.english);
+                    //console.log(res.text);
                     const res = await translate(word.english, { to: 'ne' });
-                    /*console.log(word.english);
-                    console.log(res.text);
-                    console.log(res.raw[0]);*/
                     word.devanagari = res.text;
-                    //TODO find out how to grab the latin character form of the word for pronunciation
+                    word.nepali = Sanscript.t(res.text, 'devanagari', 'hk')
+                    
                 }
                 catch (error){
                     throw new Error(`failed to translate word ${error}`)
@@ -35,6 +42,18 @@ async function loadWOTD(filepath){
         throw new Error(`WOTD failed to load. ${error}`)
     }
 };
+
+async function alphabetizeAndClearDupes(){
+    try {
+        const rawData = await readFile(filepath, 'utf8');
+        const data = JSON.parse(rawData);
+        // now sort the data here TODO
+    }
+    catch (error){
+        throw new Error(`Failed to open file. ${error}`);
+    }
+}
+
 
 loadWOTD("../wotd.json");
 
