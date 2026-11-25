@@ -79,3 +79,4 @@ function subscribeNewsletter(){
     const url = 'https://simple-newsletter.com/v1/subscriptions/?uri=https%3A%2F%2Fclarknado.neocities.org%2Ffeed.xml&return=https%3A%2F%2Fclarknado.neocities.org%2F&email='+email;
     window.location.href=url;
 }
+

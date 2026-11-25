@@ -1,6 +1,60 @@
 /* Hello, you've found the website easter egg! The secret phrase is: sea urchin extravaganza */
 
 
+
+/*LIGHT MODE STYLE*/
+
+body {
+  background-image: url("../images/scaled.jpeg");
+  background-color:white;
+  color:black;
+}
+
+article{
+  border: 60px solid antiquewhite;
+  border-image: url(../images/scroll1.png) 30 stretch;
+  background-color: antiquewhite;
+}
+
+.sidebar{
+  border: 2px dotted black;
+}
+
+p{
+  color: #4c4c4c;
+}
+
+#main{
+  border: ridge 1em brown;
+  background-color:cornflowerblue;
+  background-color: rgba(50, 150, 180, 0.6);
+}
+
+#wotd>p{
+  background-color: antiquewhite;
+  color:black;
+}
+
+fieldset{
+  border: solid burlywood;
+}
+
+article > img{
+  border: solid burlywood;
+}
+
+nav > ul > li {
+  background-color: aquamarine;
+  border: solid 1px black;
+}
+
+nav > ul > li > a, nav > ul > li > a:visited{
+  color:white;
+}
+
+
+
+
 /*DARK MODE STYLE*/
 
 @media (prefers-color-scheme: dark) {
@@ -24,6 +78,16 @@
     color:#a9a9b4;
   }
 
+  #main{
+  border: none;
+  background-color:transparent;
+  }
+
+  #wotd > p {
+    background-color: transparent;
+    color:#a9a9b4;
+  }
+
   a:visited{
     color:#7d7dba
   }
@@ -38,63 +102,17 @@
 
     nav > ul > li {
     background-color: #051428;
+    border: solid 1px gray;
   }
 
   nav > ul > li > a, nav > ul > li > a:visited{
     color:white;
   }
 
-}
-
-
-/*LIGHT MODE STYLE*/
-
-@media (prefers-color-scheme: light) {
-  body {
-    background-image: url("../images/scaled.jpeg");
-    background-color:white;
-    color:black;
-  }
-
-  article{
-    border: 60px solid antiquewhite;
-    border-image: url(../images/scroll1.png) 30 stretch;
-    background-color: antiquewhite;
-  }
-
-  .sidebar{
-    border: 2px dotted black;
-  }
-
-  p{
-    color: #4c4c4c;
-  }
-
-  #main{
-    border: ridge 1em brown;
-    background-color:cornflowerblue;
-    background-color: rgba(50, 150, 180, 0.6);
-  }
-  
-  #wotd>p{
-    background-color: antiquewhite;
-    color:black;
-  }
-
-  fieldset{
-    border: solid burlywood;
-  }
-
-  article > img{
-    border: solid burlywood;
-  }
-
-  nav > ul > li {
-    background-color: aquamarine;
-  }
-
-  nav > ul > li > a, nav > ul > li > a:visited{
-    color:white;
+  @media screen and (max-width: 600px) {
+    article{
+      border-image: url(../images/scroll1.png) 30 stretch;
+    }
   }
 }
 
@@ -117,7 +135,6 @@ nav > ul > li:nth-child(odd) {
 nav > ul > li {
   opacity: 100;
   list-style: none;
-  border: solid 1px black;
   margin-bottom: 1em;
 }
 nav > ul > li > a, nav > ul > li > a:visited{
@@ -383,7 +400,7 @@ hr{
   }
   body{
     margin:0em;
-    background-image: url("/images/BackgroundScaledMobile.png");
+    /*background-image: url("/images/BackgroundScaledMobile.png");*/
   }
   h1{
     font-size: large;
@@ -422,8 +439,8 @@ hr{
   }
 
   article{
-    border: 45px solid transparent;
-    border-image: url(../images/scroll1.png) 30 stretch;
+    /*border: 45px solid transparent;*/
+    /*border-image: url(../images/scroll1.png) 30 stretch;*/
     background-clip: content-box;
 
   }
@@ -458,9 +475,8 @@ hr{
 
   article{
     border: 30px solid transparent;
-    border-image: url(../images/scroll1.png) 30 stretch;
     background-clip: content-box;
-
+    border-image: url(../images/scroll1.png) 30 stretch;
   }
 
   #header>a>img{
@@ -531,4 +547,33 @@ hr{
 
 
 
+}
+
+
+@media screen and (max-width: 1000px) and (prefers-color-scheme: dark) {
+  article{
+    border: 30px solid transparent;
+    background-clip: content-box;
+    border-image: url(../images/scroll2.png) 30 stretch;
+  }
+  #main{
+    border:none;
+  }
+}
+
+@media screen and (max-width: 600px) and (prefers-color-scheme: dark) {
+  article{
+    border: 30px solid transparent;
+    background-clip: content-box;
+    border-image: url(../images/scroll2.png) 30 stretch;
+  }
+  article>img{
+    filter:none;
+  }
+  #main{
+    border:none;
+  }
+  #wotd>p{
+    background-color:#051428
+  }
 }
