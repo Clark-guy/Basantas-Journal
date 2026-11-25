@@ -8,6 +8,7 @@ import xml.etree.ElementTree as ET
 from PIL import Image
 import pillow_heif
 from pathlib import Path
+from pymov2gif import convert
 
 #This python file should take in a bunch of text and make it into a blog post
 #for starters just going to have it piped in, but ultimately could use tkinter
@@ -29,13 +30,18 @@ the path to the folder, just its name. E.g. 'python ./main "IST"'
 3.5 - for a dry run (no rss update, no linking to the /posts folder) add -d
 
 4. manually move files to neocities. That means copy the new post, feed.xml,
-blog.html. I think that's everything for now
+blog.html. 
+
 
 TODO:
 1. would be a good idea to fix the figure elements so images can be minimized
 for easier reading.
+
 2. would also be a good idea to make images work with the simple newsletter -
-this is just a matter of fixing the rss feed script to supply the correct url
+this is just a matter of fixing the rss feed script to supply the correct url.
+
+3. I could make it so that if dryRun is false, it automatically pushes to 
+github. Or even have a separate flag to do that.
 '''
 
 
@@ -89,31 +95,47 @@ def linkBlogPage(date, title):
     with open("../../pages/blog.html", 'w') as bloghtmlOut:
         bloghtmlOut.write(str(soup.prettify()))
 
+def convertHeicToJpeg(filename):
+    heif_file = pillow_heif.read_heif(filename)
+    outputImage = Image.frombytes(
+        heif_file.mode,
+        heif_file.size,
+        heif_file.data,
+        "raw",
+    )
+    outputImage.save(filename.replace('.heic', '.jpeg'), format("jpeg"))
+    #delete original heic file
+    Path(filename).unlink(missing_ok=False)
 
-def processImages(filename):
-    print(filename)
-
-    if filename.endswith('heic'):
-        #convert image to jpeg
-        heif_file = pillow_heif.read_heif(filename)
-        outputImage = Image.frombytes(
-            heif_file.mode,
-            heif_file.size,
-            heif_file.data,
-            "raw",
-        )
-        outputImage.save(filename.replace('.heic', '.jpeg'), format("jpeg"))
-
-        #delete original heic file
-        Path(filename).unlink(missing_ok=False)
-
+def resizeImage(filename):
     #resize image to like a reasonable size
     img = Image.open(filename.replace('.heic', '.jpeg'))
-    baseWidth = 500
+    baseWidth = 600
     wpercent = (baseWidth / float(img.size[0]))
     hsize = int((float(img.size[1]) * float(wpercent)))
     img = img.resize((baseWidth, hsize), Image.Resampling.LANCZOS)
     img.save(filename.replace('.heic', '.jpeg'))
+
+def movToGif(filename):
+    print(filename)
+    convert(filename, resolution='800x450', framerate=20, output_file=f'{filename[:-4]}.gif')
+
+def processAttachments(filename):
+    #print(filename)
+    ext = Path(filename).suffix.lower()
+
+    match ext:
+        case '.heic':
+            convertHeicToJpeg(filename)
+            resizeImage(filename.replace('.heic', '.jpeg'))
+        case '.jpeg':
+            resizeImage(filename)
+        case '.mov':
+            movToGif(filename)
+
+        
+
+    
 
 
 def fixMarkdownItalics(inputMarkDownString):
@@ -126,7 +148,7 @@ def fixMarkdownItalics(inputMarkDownString):
     openTag = True
     for char in inputMarkDownString:
         if char == '*':
-            print('found a star')
+            #print('found a star')
             if openTag:
                 inputMarkDownStringFixedItalics += '<i>'
                 openTag = False
@@ -138,10 +160,62 @@ def fixMarkdownItalics(inputMarkDownString):
     return inputMarkDownStringFixedItalics
 
 
+
+#this function fixes video tags with beautiful soup.
+#since neocities does not support video files on free accounts,
+#i won't be using this right now. I may in the future.
+def fixVideoTags(html):
+    soup = bs4.BeautifulSoup(html, features="html.parser")
+    #print(str(soup.prettify()))
+    #print('\n\nbefore:')
+    #for tag in soup.find_all("img", alt="Movie"):
+    #    print(tag)
+
+    #print('--\nafter:')
+    for oldtag in soup.find_all("img", alt="Movie"):
+        tag = soup.new_tag("video")
+        tag.attrs = oldtag.attrs.copy()
+        oldtag.replace_with(tag)
+        #tag.name='video'
+        tag['controls'] = ''
+        tag.parent.name= 'details'
+        summary = soup.new_tag("summary")
+        summary.string="video"
+        tag.parent.append(summary)
+        tag.wrap(soup.new_tag("figure"))
+
+        details = tag.parent.parent
+        #details.br.extract()
+
+        details.contents[2].wrap(soup.new_tag("figcaption"))
+
+        
+        #print(details.figcaption)
+        #print(details.figure)
+        #print("VIDEO: ")
+        #print(details.figure.video)
+        details.figure.append(details.figcaption.extract())
+        details.contents[1].extract()
+        #print(details.figcaption)
+        #print(details.figure)'''
+
+        
+        #for item in (tag.parent.parent.contents):
+        #    print(f'item: {item}')
+        #    print('movie)')
+    
+    #print(str(soup.prettify()))
+    return (str(soup.prettify()))
+
+
 def main():
     #take post from input (given name)
-    if (len(sys.argv) == 2 or len(sys.argv) == 3):
-        dryRun = True if (sys.argv[2] == '-d') else False
+    if (len(sys.argv) >= 2):
+        
+        dryRun = False
+        if (len(sys.argv) >2):
+            dryRun = True if (sys.argv[2] == "-d") else False
+        print(f"dry run: {dryRun}")
 
         postTitle = sys.argv[1]
         todaysDate = date.today().strftime('%m-%d-%y')
@@ -152,9 +226,10 @@ def main():
         
         #read in markdown, convert to html, replace in template
         with open('./input/'+postTitle+'/'+postTitle+'.md') as inputMarkDown:
-            inputMarkDownString = inputMarkDown.read().replace('.heic','.jpeg')
+            inputMarkDownString = inputMarkDown.read().replace('.heic','.jpeg').replace('.mov','.gif')
 
             inputMarkDownStringFixedItalics = fixMarkdownItalics(inputMarkDownString)
+            #print(inputMarkDownStringFixedItalics)
 
             md = MarkdownIt()
             # md.enable('emphasis') # TODO: it's possible this would fix the "fixMarkdownItalics" thing 
@@ -165,6 +240,9 @@ def main():
             templateText = template.read()
             template.close()
 
+            #print(md.render(inputMarkDownStringFixedItalics))
+            
+
             with open('../../pages/blog posts/'+todaysDate+'/post.html', 'w') as newPost:
                 newPostText = templateText.replace('<p>TEMPLATE</p>',md.render(inputMarkDownStringFixedItalics))
                 newPost.write(newPostText)
@@ -174,37 +252,20 @@ def main():
         #Convert all images to jpeg and resize
         attachmentFolder = Path('./input/'+sys.argv[1]+'/Attachments')
         for image in attachmentFolder.iterdir():
-            processImages('./input/'+sys.argv[1]+'/Attachments'+'/'+image.name)
+            processAttachments('./input/'+sys.argv[1]+'/Attachments'+'/'+image.name)
         
         #copy Attachments folder into new folder
         shutil.copytree('./input/'+sys.argv[1]+'/Attachments',outputPath+'/Attachments', dirs_exist_ok=True)
 
-        
-
         if not dryRun:
             linkBlogPage(todaysDate,postTitle)
 
-        #TODO Fix figures to be in a figure element
-
-        #TODO automatically push to github? Maybe not. Would be convenient but
-        #then publishing would ALWAYS push to prod
-        #Something to think about though as I test this tool more. Once all
-        #the kinks are worked out, it could save some time
-
-
-        
 
     else:
-        print("no input given")
-        print("script must be called in the following format:")
+        print("Wrong number of inputs")
+        print("script must be called in one of the following formats:")
         print("python main.py \"Title of Entry\"")
-
-
-
-        #copy over pictures
-
-
-
+        print("python main.py \"Title of Entry\" -d")
 
 
 if __name__ == "__main__":
