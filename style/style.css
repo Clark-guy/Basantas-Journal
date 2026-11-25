@@ -1,26 +1,207 @@
 /* Hello, you've found the website easter egg! The secret phrase is: sea urchin extravaganza */
 
 
+/*DARK MODE STYLE*/
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image: url("../images/scaledDark.jpeg");
+    background-color:black;
+    color:#c2c2db;
+  }
+
+  article{
+    border: 60px solid RGB(5, 15, 35);
+    border-image: url(../images/scroll2.png) 30 stretch;
+    background-color: #051428;
+  }
+
+  .sidebar{
+    border: 2px dotted gray;
+  }
+
+  p{
+    color:#a9a9b4;
+  }
+
+  a:visited{
+    color:#7d7dba
+  }
+
+  fieldset{
+    border:solid 1px #7d7dba;
+  }
+  article > img{
+    border:solid #7d7dba;
+    filter:brightness(60%) grayscale(80%)
+  }
+
+    nav > ul > li {
+    background-color: #051428;
+  }
+
+  nav > ul > li > a, nav > ul > li > a:visited{
+    color:white;
+  }
+
+}
+
+
+/*LIGHT MODE STYLE*/
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-image: url("../images/scaled.jpeg");
+    background-color:white;
+    color:black;
+  }
+
+  article{
+    border: 60px solid antiquewhite;
+    border-image: url(../images/scroll1.png) 30 stretch;
+    background-color: antiquewhite;
+  }
+
+  .sidebar{
+    border: 2px dotted black;
+  }
+
+  p{
+    color: #4c4c4c;
+  }
+
+  #main{
+    border: ridge 1em brown;
+    background-color:cornflowerblue;
+    background-color: rgba(50, 150, 180, 0.6);
+  }
+  
+  #wotd>p{
+    background-color: antiquewhite;
+    color:black;
+  }
+
+  fieldset{
+    border: solid burlywood;
+  }
+
+  article > img{
+    border: solid burlywood;
+  }
+
+  nav > ul > li {
+    background-color: aquamarine;
+  }
+
+  nav > ul > li > a, nav > ul > li > a:visited{
+    color:white;
+  }
+}
+
+
+nav > ul{
+  opacity: 100;
+  margin: 1em;
+  padding: 0em;
+  justify-content: center;
+  text-align: center;
+}
+nav > ul > li:nth-child(even) {
+  transform: translateX(10px);
+  transform: rotate(3deg);
+}
+nav > ul > li:nth-child(odd) {
+  transform: translateX(-10px);
+  transform: rotate(-2deg);
+}
+nav > ul > li {
+  opacity: 100;
+  list-style: none;
+  border: solid 1px black;
+  margin-bottom: 1em;
+}
+nav > ul > li > a, nav > ul > li > a:visited{
+  color:white;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  display:block;
+  -webkit-text-stroke: 3px black;
+  paint-order: stroke fill;
+  font-weight:bold;
+  text-decoration:none;
+  text-shadow: 0 0 5px black;
+}
+nav > ul > li:hover, nav > ul > li:visited:hover {
+  background-color: aliceblue;
+  animation:float .15s;
+  animation-iteration-count: 1;
+}
+
+article > img{
+  max-width:98.5%;
+}
 
 fieldset{
   max-height: 60vh;
   overflow: scroll;
-  border: solid burlywood;
 }
+
+#wotd>p{
+  padding:0.25em;
+  margin: 0;
+}
+
+
+p {
+  border-radius: 1em .25em;
+  line-height: 1.75em;
+  overflow:auto;
+}
+
+#main {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  grid-column: 2;
+  grid-row: 2 / span 2;
+}
+
+#nav{
+  background-color: rgba(0,0,0, 0.4);
+  border-radius: 10px;
+  padding: 4px;
+  grid-column: 1;
+  grid-row: 2;
+  height:fit-content;
+  display: inline-block;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size:cover;
+  font-family: Verdana;
+}
+
+article{
+  background-clip: content-box;
+  image-rendering: pixelated;
+  margin-top:1em;
+  overflow:auto;
+}
+
+
+article > h1, article > h2, legend, fieldset > h2 {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+
 
 .hamburger{
   display:none;
 }
 
-body {
-  background-image: url("../images/scaled.jpeg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size:cover;
-  background-color: white;
-  color: black;
-  font-family: Verdana;
-}
 
 .container {
   justify-content: center;
@@ -61,16 +242,8 @@ body {
   scale:1.1;
 }
 
-#main {
-  border: ridge 1em brown;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-bottom: 1em;
-  background-color:cornflowerblue;
-  grid-column: 2;
-  grid-row: 2 / span 2;
-  background-color: rgba(50, 150, 180, 0.6);
-}
+
+
 #sidebar{
   min-width: 15vw;
   display:flex;
@@ -84,16 +257,7 @@ body {
   min-width:6em;
 }
 
-#nav{
-  background-color: rgba(0,0,0, 0.4);
-  border: 2px dotted black;
-  border-radius: 10px;
-  padding: 4px;
-  grid-column: 1;
-  grid-row: 2;
-  height:fit-content;
-  display: inline-block;
-}
+
 
 .sidebar > h2, .sidebar > nav > * {
   user-select: none;
@@ -103,7 +267,6 @@ body {
   grid-column: 1;
   grid-row: 3;
   background-color: rgba(0,0,0, 0.4);
-  border: 2px dotted black;
   border-radius: 10px;
   padding: 4px;
   height:fit-content;
@@ -120,54 +283,7 @@ body {
   paint-order: stroke fill;
   
 }
-#wotd>p{
-  color:black;
-  padding:0.25em;
-  margin: 0;
-}
 
-nav > ul{
-  opacity: 100;
-  margin: 1em;
-  padding: 0em;
-  justify-content: center;
-  text-align: center;
-}
-nav > ul > li:nth-child(even) {
-  transform: translateX(10px);
-  transform: rotate(3deg);
-}
-nav > ul > li:nth-child(odd) {
-  transform: translateX(-10px);
-  transform: rotate(-2deg);
-}
-nav > ul > li {
-  opacity: 100;
-  background-color: aquamarine;
-  list-style: none;
-  border: solid 1px black;
-  margin-bottom: 1em;
-}
-nav > ul > li > a, nav > ul > li > a:visited{
-  color:white;
-  padding-top: .5em;
-  padding-bottom: .5em;
-  display:block;
-  -webkit-text-stroke: 3px black;
-  paint-order: stroke fill;
-  font-weight:bold;
-  text-decoration:none;
-  text-shadow: 0 0 5px black;
-}
-nav > ul > li:hover, nav > ul > li:visited:hover {
-  background-color: aliceblue;
-  color:black;
-  animation:float 1s;
-  animation-iteration-count: .08;
-  list-style: none;
-  border: solid 1px black;
-  margin-bottom: 1em;
-}
 
 
 #footer {
@@ -194,35 +310,13 @@ nav > ul > li:hover, nav > ul > li:visited:hover {
   box-shadow: 5px 5px 3px darkcyan;
 }
 
-p {
-  /*border: solid black 1px;*/
-  border-radius: .75em 0em;
-  color: #4c4c4c;
-  /*padding: .5em;*/
-  line-height: 1.75em;
-  background-color: antiquewhite;
-  overflow:auto;
-}
 
 li {
   color: #4c4c4c;
   margin-top: .5em;
 }
 
-article{
-  border: 60px solid antiquewhite;
-  border-image: url(../images/scroll1.png) 30 stretch;
-  background-clip: content-box;
-  image-rendering: pixelated;
-  margin-top:1em;
-  background-color: antiquewhite;
-  overflow:auto;
-}
 
-
-article > h1, article > h2, legend, fieldset > h2 {
-  font-family: 'Courier New', Courier, monospace;
-}
 
 .insetImages {
   display:inherit;
@@ -234,10 +328,7 @@ article > p {
   overflow:clip;
 }
 
-article > img{
-  max-width:98.5%;
-  border: solid burlywood;
-}
+
 
 video{
   max-width:98.5%;
